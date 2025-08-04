@@ -71,11 +71,11 @@ $$ |  $$ |$$ |  $$ |$$   ____|$$ |  $$ |
     burl = f"https://discord.com/api/v9/channels/{channelid}/messages"
     token = json.loads(open("config.json").read())["token"]
     if not token:
-        print(f"{r}Token not found in config.json. Please add your token.")
+        print(f"{r}}Invalid token please check config.json")
         return  
     webhook = json.loads(open("config.json").read()).get("webhook")
     if not webhook:
-        print(f"{r}Webhook not found in config.json. Please add your webhook URL.")
+        print(f"{r}Invalid webhook please check config.json")
         return
 
     headers = {
@@ -139,4 +139,5 @@ $$ |  $$ |$$ |  $$ |$$   ____|$$ |  $$ |
 
         lmid = messages[-1]["id"]
         ttc += len(messages)
+
 main()
